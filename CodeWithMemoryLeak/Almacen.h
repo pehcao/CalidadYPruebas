@@ -22,6 +22,9 @@ public:
         array = new Producto*[size];
         current_position = 0;
     }
+    ~Almacen(){
+        delete [] array;
+    }
     void add(Producto* p)
     {
         if(current_position >= size)

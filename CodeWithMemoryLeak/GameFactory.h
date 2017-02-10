@@ -44,4 +44,7 @@ public:
              return new Aprendizaje(nombre, num_serie, tipo_juego, num_niveles);
          }
     }
+    ~GameFactory(){
+        delete v;
+    }
 };

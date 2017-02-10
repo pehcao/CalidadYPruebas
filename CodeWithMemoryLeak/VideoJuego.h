@@ -14,11 +14,17 @@ public:
     : nombre(new string(nombre)), num_serie(new int(num_serie)), tipo_juego(new tipo(tipo_juego))
     {
     }
-    
-    string getName()
+    virtual ~VideoJuego(){
+        delete nombre;
+        delete num_serie;
+        delete tipo_juego;
+
+    }
+    string getName() const
     {
         return *nombre;
     }
+
 protected:
     string* nombre;
     int* num_serie;
@@ -35,6 +41,9 @@ public:
         this->tipo_juego = new VideoJuego::tipo(tipo_juego);
         this->number_of_players = new int(number_of_players);
     }
+    ~Estrategia(){
+        delete number_of_players;
+    }
 protected:
     int* number_of_players;
 };
@@ -49,6 +58,9 @@ public:
         this->tipo_juego = new VideoJuego::tipo(tipo_juego);
         this->rate_category = new string(rate_category);
     }
+    ~Aventura(){
+        delete rate_category;
+    }
 protected:
     string* rate_category;
 };
@@ -62,6 +74,9 @@ public:
         this->num_serie = new int(num_serie);
         this->tipo_juego = new VideoJuego::tipo(tipo_juego);
         this->num_niveles = new int(num_niveles);
+    }
+    ~Aprendizaje(){
+        delete num_niveles;
     }
 protected:
     int* num_niveles; 

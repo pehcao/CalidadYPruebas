@@ -15,7 +15,6 @@ int main()
     a.add(v3);
     
     cout << a.findByName("thirdGame")[0]->getName();
-    delete v3;
     delete gf;
     delete v1;    
 }
